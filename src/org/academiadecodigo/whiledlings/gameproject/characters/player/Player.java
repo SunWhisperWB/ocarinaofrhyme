@@ -1,10 +1,8 @@
 package org.academiadecodigo.whiledlings.gameproject.characters.player;
 
-import org.academiadecodigo.whiledlings.gameproject.characters.Character;
-import org.academiadecodigo.whiledlings.gameproject.position.Direction;
-import org.academiadecodigo.whiledlings.gameproject.position.Moveble;
+import org.academiadecodigo.whiledlings.gameproject.characters.AbstractCharacter;
 
-public class Player extends Character {
+public class Player extends AbstractCharacter {
 
 
 }
