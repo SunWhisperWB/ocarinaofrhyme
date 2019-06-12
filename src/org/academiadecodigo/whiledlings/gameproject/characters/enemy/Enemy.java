@@ -4,8 +4,4 @@ import org.academiadecodigo.whiledlings.gameproject.characters.Character;
 
 public abstract class Enemy extends Character {
 
-    @Override
-    public void move() {
-
-    }
 }
