@@ -2,5 +2,5 @@ package org.academiadecodigo.whiledlings.gameproject.position;
 
 public interface Moveble {
 
-    void move();
+    void move(Direction direction, int velocity);
 }
