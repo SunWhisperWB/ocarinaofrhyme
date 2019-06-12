@@ -1,5 +1,7 @@
 package org.academiadecodigo.whiledlings.gameproject.position;
 
+import org.academiadecodigo.simplegraphics.pictures.Picture;
+
 public class Position {
 
 
