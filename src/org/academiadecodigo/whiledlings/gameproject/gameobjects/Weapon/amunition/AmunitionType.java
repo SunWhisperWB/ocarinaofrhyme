@@ -1,4 +1,4 @@
-package org.academiadecodigo.whiledlings.gameproject.gameobjects.Weapon;
+package org.academiadecodigo.whiledlings.gameproject.gameobjects.Weapon.amunition;
 
 public enum AmunitionType {
     //TODO: Mudar a velocidade

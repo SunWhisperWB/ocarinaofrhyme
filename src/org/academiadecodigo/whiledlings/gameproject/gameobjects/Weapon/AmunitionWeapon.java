@@ -1,10 +1,14 @@
 package org.academiadecodigo.whiledlings.gameproject.gameobjects.Weapon;
 
-public class AmunitionWeapon {
+import org.academiadecodigo.whiledlings.gameproject.gameobjects.Weapon.amunition.Amunition;
+import org.academiadecodigo.whiledlings.gameproject.gameobjects.Weapon.amunition.AmunitionType;
 
-    private AmunitionType amunition;
+public class AmunitionWeapon extends Weapon{
 
-    public AmunitionWeapon(AmunitionType amunition){
+    private Amunition amunition;
+
+    public AmunitionWeapon(Amunition amunition){
         this.amunition = amunition;
+
     }
 }

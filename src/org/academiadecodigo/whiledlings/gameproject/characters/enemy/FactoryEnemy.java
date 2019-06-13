@@ -3,36 +3,39 @@ package org.academiadecodigo.whiledlings.gameproject.characters.enemy;
 public class FactoryEnemy {
 
     private int countBossEnemy;
+    private RegularEnemy[] regularEnemy;
+    private BossEnemy bossEnemy;
 
+    //Create Regular Enemy
     public RegularEnemy [] createRegularEnemy(int maxEnemy){
-
-        RegularEnemy[] enemy = null;
 
         for(int i = 0; i < maxEnemy; i++){
 
-            enemy[i] = new RegularEnemy();
+            regularEnemy[i] = new RegularEnemy();
         }
-
-        return enemy;
+        return regularEnemy;
     }
 
+    //Create Mc's enemy once in choosed scenario
     public BossEnemy createBossEnemy(){
 
-        BossEnemy enemy = null;
+        BossEnemy bossEnemy = null;
 
         switch (countBossEnemy){
             case 0:
-                enemy = new BossEnemy("MC Mariana");
+                bossEnemy = new BossEnemy("MC Mariana");
                 break;
             case 1:
-                enemy = new BossEnemy("MC Seringas");
+                bossEnemy = new BossEnemy("MC Seringas");
                 break;
             case 2:
-                enemy = new BossEnemy("MC Faustino");
+                bossEnemy = new BossEnemy("MC Faustino");
                 break;
         }
         countBossEnemy++;
-        return enemy;
+        return bossEnemy;
     }
+
+
 
 }
