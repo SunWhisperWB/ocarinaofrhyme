@@ -1,6 +1,7 @@
 package org.academiadecodigo.whiledlings.gameproject.position;
 
 import org.academiadecodigo.simplegraphics.pictures.Picture;
+import org.academiadecodigo.whiledlings.gameproject.characters.CharactersEnum;
 
 public class Position {
 
@@ -14,26 +15,24 @@ public class Position {
      *
      */
 
+
     private int columnX;
     private int rowY;
+    private String image;
     private Picture graphicRepresentation;
 
     /**
      *
-     * @param columnX Relative X Starting Pixel Position
-     * @param rowY Relative Y Starting Pixel Position
-     *
-     *
      */
 
+    public Position(CharactersEnum charactersEnum){
 
-    public Position(int columnX, int rowY, Picture graphicRepresentation){
+        columnX = charactersEnum.getInicialWidth();
+        rowY = charactersEnum.getInicialHeigth();
+        image = charactersEnum.getImage();
 
-        this.columnX = columnX;
-        this.rowY = rowY;
-        this.graphicRepresentation = graphicRepresentation;
+        graphicRepresentation = new Picture(columnX, rowY, image);
         graphicRepresentation.draw();
-
 
     }
 
@@ -62,6 +61,10 @@ public class Position {
 
     public int getRowY() {
         return rowY;
+    }
+
+    public Picture getGraphicRepresentation() {
+        return graphicRepresentation;
     }
 
     public void printColandRow() {

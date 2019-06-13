@@ -1,4 +1,4 @@
-package org.academiadecodigo.whiledlings.gameproject.gamecommand;
+package org.academiadecodigo.whiledlings.gameproject.mousecommand;
 
-public class GameCommand {
+public class MouseCommand {
 }
