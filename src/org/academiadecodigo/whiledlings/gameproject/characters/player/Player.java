@@ -1,5 +1,4 @@
 package org.academiadecodigo.whiledlings.gameproject.characters.player;
-import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.whiledlings.gameproject.characters.AbstractCharacter;
 import org.academiadecodigo.whiledlings.gameproject.characters.CharactersEnum;
 import org.academiadecodigo.whiledlings.gameproject.keyboard.PlayerKeyBoardHandler;
@@ -10,8 +9,6 @@ public class Player extends AbstractCharacter {
 
 
 
-    private Keyboard keyboard;
-
     public Player() {
 
         super();
@@ -20,7 +17,6 @@ public class Player extends AbstractCharacter {
         super.setVelocity(CharactersEnum.PLAYER.getVelocity());
 
         move(Direction.RIGTH);
-
     }
 
     @Override

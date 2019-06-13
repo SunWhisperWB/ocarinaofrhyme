@@ -22,13 +22,17 @@ public class Position {
     private Picture graphicRepresentation;
 
     /**
+     * @param charactersEnum
+     *
+     * Receives a CharacterEnum Value and extracts its included information to the Graphic representation
      *
      */
 
+
     public Position(CharactersEnum charactersEnum){
 
-        columnX = charactersEnum.getInicialWidth();
-        rowY = charactersEnum.getInicialHeigth();
+        columnX = charactersEnum.getInicialWidthX();
+        rowY = charactersEnum.getInicialHeigthY();
         image = charactersEnum.getImage();
 
         graphicRepresentation = new Picture(columnX, rowY, image);
