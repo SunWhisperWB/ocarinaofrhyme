@@ -9,25 +9,24 @@ import org.academiadecodigo.whiledlings.gameproject.position.Position;
 public class Player extends AbstractCharacter {
 
 
-    private int velocity;
+
     private Keyboard keyboard;
 
     public Player() {
 
+        super();
         position = new Position(CharactersEnum.PLAYER);
 
-        velocity = CharactersEnum.PLAYER.getVelocity();
+        super.setVelocity(CharactersEnum.PLAYER.getVelocity());
 
-        new PlayerKeyBoardHandler(position.getGraphicRepresentation());
-
-
+        move(Direction.RIGTH);
 
     }
 
     @Override
     public void move(Direction direction) {
 
-
+        new PlayerKeyBoardHandler(position.getGraphicRepresentation());
 
     }
 }
