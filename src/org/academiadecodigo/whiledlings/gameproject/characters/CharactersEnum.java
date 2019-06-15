@@ -34,7 +34,7 @@ public enum CharactersEnum {
    }
 
     /**
-     * GETTERS && SETTERS
+     * GETTERS && Setters
      **/
 
     public String getImage() {
