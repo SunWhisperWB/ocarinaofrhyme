@@ -2,7 +2,9 @@ package org.academiadecodigo.whiledlings.gameproject.characters;
 
 public enum CharactersEnum {
 
-    PLAYER( 0, 0, "./images/characteranimation/Walk (1).png", 3);
+    PLAYER( 0, 0, "./images/characteranimation/Walk (1).png", 3),
+    REGULARENEMY( 30,30, "./images/enemy/enemy.png", 3);
+
 
 
 
