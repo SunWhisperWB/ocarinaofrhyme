@@ -1,5 +1,6 @@
 package org.academiadecodigo.whiledlings.gameproject.gameobjects.Weapon.amunition;
 
+import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.whiledlings.gameproject.position.Direction;
 import org.academiadecodigo.whiledlings.gameproject.position.Moveble;
@@ -15,18 +16,19 @@ public class Amunition implements Moveble {
     private Position position;
     private int velocity;
 
-    public Amunition(Position position, Direction direction, AmunitionType amunitionType){
+    public Amunition(Position position){
 
-        this.amunitionType = amunitionType;
 
-        velocity = amunitionType.getSpeed();
+        velocity = 10;
 
         this.position = new Position(position.getCol(), position.getRow());
 
         int inicialCol = position.getCol();
         int inicialRow = position.getRow();
 
-        rectangle = new Rectangle(inicialCol, inicialRow, 3, 3);
+        rectangle = new Rectangle(inicialCol, inicialRow, 10, 10);
+        rectangle.setColor(Color.BLACK);
+        rectangle.fill();
 
 
 

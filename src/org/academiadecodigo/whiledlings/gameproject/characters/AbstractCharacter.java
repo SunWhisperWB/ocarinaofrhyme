@@ -20,15 +20,13 @@ public abstract class AbstractCharacter implements Moveble {
     public AbstractCharacter(CharactersEnum charactersEnum) {
 
 
-        picture = new Picture(charactersEnum.getInicialCol(),
-                charactersEnum.getInicialRow(), charactersEnum.getInicialImage());
-       picture.draw();
-       this.velocity = charactersEnum.getVelocity();
 
-       this.position = new Position(charactersEnum.getInicialCol(), charactersEnum.getInicialRow());
-
-       shootingDirection = Direction.RIGTH;
-       weapon = new Gun();
+        picture = new Picture(charactersEnum.getInicialCol(), charactersEnum.getInicialRow(), charactersEnum.getInicialImage());
+        picture.draw();
+        this.velocity = charactersEnum.getVelocity();
+        this.position = new Position(charactersEnum.getInicialCol(), charactersEnum.getInicialRow());
+        shootingDirection = Direction.RIGTH;
+        weapon = new Gun();
     }
 
 
@@ -76,7 +74,7 @@ public abstract class AbstractCharacter implements Moveble {
 
     }
 
-    public void playerShoot(){
+    public void shoot(){
 
         weapon.shot(position, getShootingDirection());
     }

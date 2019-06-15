@@ -20,6 +20,7 @@ public class GameKeyBoard {
         playerKeyBoard(KeyType.LEFT);
         playerKeyBoard(KeyType.UP);
         playerKeyBoard(KeyType.DOWN);
+        playerKeyBoard(KeyType.SPACE);
     }
 
     private void playerKeyBoard(KeyType keyType){
@@ -41,6 +42,8 @@ public class GameKeyBoard {
             case DOWN:
                 event.setKey(KeyboardEvent.KEY_DOWN);
                 break;
+            case SPACE:
+                event.setKey(KeyboardEvent.KEY_SPACE);
 
 
         }

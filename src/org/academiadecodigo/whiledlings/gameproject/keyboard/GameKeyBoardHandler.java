@@ -32,6 +32,9 @@ public class GameKeyBoardHandler implements KeyboardHandler {
             case KeyboardEvent.KEY_DOWN:
                 game.movePlayer(Direction.DOWN);
                 break;
+            case KeyboardEvent.KEY_SPACE:
+                game.playerShoot();
+                break;
 
         }
 

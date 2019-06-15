@@ -36,5 +36,9 @@ public class Game {
 
      }
 
+     public void playerShoot(){
+          player.shoot();
+     }
+
 
 }
