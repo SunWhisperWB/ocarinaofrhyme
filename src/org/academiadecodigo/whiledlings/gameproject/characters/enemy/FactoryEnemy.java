@@ -1,5 +1,6 @@
 package org.academiadecodigo.whiledlings.gameproject.characters.enemy;
 
+import org.academiadecodigo.whiledlings.gameproject.characters.CharactersEnum;
 import org.academiadecodigo.whiledlings.gameproject.scenarios.Scenario;
 
 public class FactoryEnemy {
@@ -13,22 +14,22 @@ public class FactoryEnemy {
         this.scenario = scenario;
     }
 
-    //Create Regular Enemy
+   /** Create Regular Enemy
     public RegularEnemy [] createRegularEnemy(int maxEnemy){
 
         for(int i = 0; i < maxEnemy; i++){
 
-            regularEnemy[i] = new RegularEnemy(scenario);
+            regularEnemy[i] = new RegularEnemy(CharactersEnum.PLAYER);
         }
         return regularEnemy;
     }
 
     //Create Mc's enemy once in choosed scenario
-    public BossEnemy createBossEnemy(){
+   // public BossEnemy createBossEnemy(){
 
-        return  new BossEnemy(scenario);
-    }
+      //  return  new BossEnemy(scenario);
+    // }
 
-
+ **/
 
 }

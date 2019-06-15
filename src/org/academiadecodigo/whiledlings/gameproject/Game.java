@@ -7,17 +7,21 @@ import org.academiadecodigo.whiledlings.gameproject.position.Direction;
 import org.academiadecodigo.whiledlings.gameproject.scenarios.Bedroom;
 import org.academiadecodigo.whiledlings.gameproject.scenarios.LivingRoom;
 import org.academiadecodigo.whiledlings.gameproject.scenarios.Scenario;
+import org.academiadecodigo.whiledlings.gameproject.scenarios.TestingScenarioDummy;
 
 public class Game {
 
      private Enemy [] enemies;
      private Player player;
-     private Scenario scenario;
+     private TestingScenarioDummy scenario;
      private DamageDetector damageDetector;
 
      public Game(){
-          scenario = new LivingRoom();
-          player = new Player(scenario);
+
+          scenario = new TestingScenarioDummy(90, 50);
+
+          player = new Player();
+
           GameKeyBoard gameKeyBoard = new GameKeyBoard(this);
           gameKeyBoard.callKeyBoard(); //Call keyboard commands
 
@@ -30,7 +34,8 @@ public class Game {
 
 
      public void movePlayer(Direction direction){
-          player.move(direction, scenario.getCellSize());
+          player.move(direction, scenario.getCellSizeInPixels());
+
      }
 
 

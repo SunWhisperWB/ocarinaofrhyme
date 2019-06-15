@@ -8,8 +8,9 @@ import org.academiadecodigo.whiledlings.gameproject.scenarios.Scenario;
 
 public abstract class Enemy extends AbstractCharacter {
 
-    public Enemy(Picture picture, Scenario scenario, int velocity) {
-        super(picture, velocity);
+    public Enemy(CharactersEnum charactersEnum) {
+
+        super(CharactersEnum.PLAYER);
     }
 
     //TODO: desenvolver este método
