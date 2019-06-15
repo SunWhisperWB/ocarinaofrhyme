@@ -1,6 +1,5 @@
 package org.academiadecodigo.whiledlings.gameproject.characters.player;
 
-import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.whiledlings.gameproject.characters.AbstractCharacter;
 import org.academiadecodigo.whiledlings.gameproject.characters.CharactersEnum;
 

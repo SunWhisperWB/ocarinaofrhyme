@@ -13,7 +13,7 @@ public abstract class Enemy extends AbstractCharacter {
 
     //TODO: desenvolver este método
     @Override
-    public void move(Direction direction, int cellSize) {
+    public void move(Direction direction) {
         int directionRandomizer = (int)(Math.random()*4);
         switch ( directionRandomizer){
             case (0):
@@ -32,6 +32,6 @@ public abstract class Enemy extends AbstractCharacter {
         }
 
 
-        super.move(direction, cellSize);
+        super.move(direction);
     }
 }

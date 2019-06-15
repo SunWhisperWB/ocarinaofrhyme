@@ -32,7 +32,7 @@ public class Game {
 
 
      public void movePlayer(Direction direction){
-          player.move(direction, scenario.getCellSize());
+          player.move(direction);
 
      }
 

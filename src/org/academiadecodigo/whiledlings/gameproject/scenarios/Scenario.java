@@ -5,12 +5,11 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class Scenario {
 
     private Picture picture;
-    private int cellSize;
+    public final static int CELL_SIZE = 10;
 
     public Scenario(ScenarioType scenarioType){
         picture = new Picture(10, 10, path(scenarioType));
         picture.draw();
-        cellSize = 10; //TODO: MUDAR
 
     }
 
@@ -23,7 +22,7 @@ public class Scenario {
     }
 
     public int getCellSize(){
-        return cellSize;
+        return CELL_SIZE;
     }
 
     private String path(ScenarioType scenario){
@@ -69,6 +68,7 @@ public class Scenario {
 
         return path;
     }
+
 
 
 }
