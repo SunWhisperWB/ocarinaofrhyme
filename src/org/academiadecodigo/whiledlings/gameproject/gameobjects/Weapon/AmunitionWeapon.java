@@ -5,10 +5,9 @@ import org.academiadecodigo.whiledlings.gameproject.gameobjects.Weapon.amunition
 
 public class AmunitionWeapon extends Weapon{
 
-    private Amunition amunition;
+    private AmunitionType amunition;
 
-    public AmunitionWeapon(Amunition amunition){
+    public AmunitionWeapon(AmunitionType amunition){
         this.amunition = amunition;
-
     }
 }
