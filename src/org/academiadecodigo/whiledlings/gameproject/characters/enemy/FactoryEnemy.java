@@ -1,16 +1,15 @@
 package org.academiadecodigo.whiledlings.gameproject.characters.enemy;
 
-import org.academiadecodigo.whiledlings.gameproject.characters.CharactersEnum;
-import org.academiadecodigo.whiledlings.gameproject.scenarios.Scenario;
+import org.academiadecodigo.whiledlings.gameproject.scenarios.ScenarioType;
 
 public class FactoryEnemy {
 
     private int countBossEnemy;
     private RegularEnemy[] regularEnemy;
     private BossEnemy bossEnemy;
-    private Scenario scenario;
+    private ScenarioType scenario;
 
-    public FactoryEnemy(Scenario scenario){
+    public FactoryEnemy(ScenarioType scenario){
         this.scenario = scenario;
     }
 
