@@ -98,5 +98,8 @@ public abstract class AbstractCharacter implements Moveble {
         return shootingDirection;
     }
 
+    public Picture getPicture(){
+        return picture;
+    }
 
 }
