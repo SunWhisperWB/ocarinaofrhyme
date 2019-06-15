@@ -1,5 +1,6 @@
 package org.academiadecodigo.whiledlings.gameproject.characters;
 
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.whiledlings.gameproject.position.Direction;
 import org.academiadecodigo.whiledlings.gameproject.position.Moveble;
 import org.academiadecodigo.whiledlings.gameproject.position.Position;
@@ -7,37 +8,41 @@ import org.academiadecodigo.whiledlings.gameproject.position.Position;
 
 public abstract class AbstractCharacter implements Moveble {
 
+    Picture picture;
     private int velocity;
     private Position position;
 
-    public AbstractCharacter(CharactersEnum characterType) {
-        this.velocity = characterType.getVelocity();
-        this.position = new Position(characterType);
+    public AbstractCharacter(Picture picture, int velocity) {
+       this.picture = picture;
+       picture.draw();
+       this.velocity = velocity;
+       this.position = new Position(0, 0); //TODO: MUDAR
     }
 
 
     @Override
-    public void move(Direction direction) {
+    public void move(Direction direction, int cellSize) {
+
+        int speed = cellSize * velocity;
 
         switch (direction){
-
-            case LEFT:
-                position.getGraphicRepresentation().translate((-1) * velocity, 0);
-                break;
-
             case RIGTH:
-                position.getGraphicRepresentation().translate(velocity, 0 );
+                picture.translate(speed , 0);
+                position.setCol(velocity);
                 break;
-
-            case DOWN:
-                position.getGraphicRepresentation().translate(0, velocity);
+            case LEFT:
+                picture.translate(-speed, 0);
+                position.setCol(-velocity);
                 break;
-
             case UP:
-                position.getGraphicRepresentation().translate(0, (-1) * velocity);
+                picture.translate(0, -speed);
+                position.setRow(-velocity);
+                break;
+            case DOWN:
+                picture.translate(0, speed);
+                position.setRow(velocity);
                 break;
         }
-
 
     }
 
@@ -48,6 +53,10 @@ public abstract class AbstractCharacter implements Moveble {
 
     public Position getPosition(){
         return position;
+    }
+
+    public void setPosition(Position position){
+        this.position = position;
     }
 
 

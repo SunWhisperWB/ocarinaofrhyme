@@ -1,24 +1,19 @@
 package org.academiadecodigo.whiledlings.gameproject.characters.player;
 
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.whiledlings.gameproject.characters.AbstractCharacter;
 import org.academiadecodigo.whiledlings.gameproject.characters.CharactersEnum;
-import org.academiadecodigo.whiledlings.gameproject.keyboard.PlayerKeyBoardHandler;
-import org.academiadecodigo.whiledlings.gameproject.position.Direction;
+import org.academiadecodigo.whiledlings.gameproject.scenarios.Scenario;
 
 
 public class Player extends AbstractCharacter {
 
-    public Player() {
 
-        super(CharactersEnum.PLAYER);
+    public Player(Scenario scenario) {
 
-        move(Direction.RIGTH);
-    }
-
-    @Override
-    public void move(Direction direction) {
-
-        new PlayerKeyBoardHandler(super.getPosition().getGraphicRepresentation());
+        super(new Picture(10, 10, "./images/characteranimation/Walk (1).png"),
+                10);
 
     }
+
 }
