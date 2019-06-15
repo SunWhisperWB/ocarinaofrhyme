@@ -1,48 +1,105 @@
 package org.academiadecodigo.whiledlings.gameproject.characters;
 
+import org.academiadecodigo.simplegraphics.pictures.Picture;
+import org.academiadecodigo.whiledlings.gameproject.gameobjects.Weapon.Gun;
+import org.academiadecodigo.whiledlings.gameproject.gameobjects.Weapon.Weapon;
 import org.academiadecodigo.whiledlings.gameproject.position.Direction;
 import org.academiadecodigo.whiledlings.gameproject.position.Moveble;
 import org.academiadecodigo.whiledlings.gameproject.position.Position;
+import org.academiadecodigo.whiledlings.gameproject.scenarios.Scenario;
 
 
 public abstract class AbstractCharacter implements Moveble {
 
-    protected Position position;
+    Picture picture;
     private int velocity;
+    private Position position;
+    private Direction shootingDirection;
+    private Weapon weapon;
 
-    public AbstractCharacter() {
+    public AbstractCharacter(CharactersEnum charactersEnum) {
 
-        velocity = 0;
 
+
+        picture = new Picture(charactersEnum.getInicialCol(), charactersEnum.getInicialRow(), charactersEnum.getInicialImage());
+        picture.draw();
+        this.velocity = charactersEnum.getVelocity();
+        this.position = new Position(charactersEnum.getInicialCol(), charactersEnum.getInicialRow());
+        shootingDirection = Direction.RIGTH;
+        weapon = new Gun();
     }
 
 
     @Override
     public void move(Direction direction) {
+        int speed = Scenario.CELL_SIZE * velocity;
 
         switch (direction){
-
-            case LEFT:
-                position.getGraphicRepresentation().translate((-1) * velocity, 0);
-                break;
-
             case RIGTH:
-                position.getGraphicRepresentation().translate(velocity, 0 );
-                break;
+                picture.translate(speed , 0);
+                position.setCol(velocity);
+                shootingDirection = Direction.RIGTH;
 
-            case DOWN:
-                position.getGraphicRepresentation().translate(0, velocity);
+
+                System.out.println(" I'm in column: " + position.getCol() + " and " + " I'm on row " + position.getRow());
+
+                break;
+            case LEFT:
+
+                picture.translate(-speed, 0);
+                position.setCol(-velocity);
+                shootingDirection = Direction.LEFT;
+
+                System.out.println(" I'm in column: " + position.getCol() + " and " + " I'm on row " + position.getRow());
                 break;
 
             case UP:
-                position.getGraphicRepresentation().translate(0, (-1) * velocity);
+
+                picture.translate(0, -speed);
+                position.setRow(-velocity);
+                shootingDirection = Direction.UP;
+
+                System.out.println(" I'm in column: " + position.getCol() + " and " + " I'm on row " + position.getRow());
+                break;
+
+            case DOWN:
+
+                picture.translate(0, speed);
+                position.setRow(velocity);
+                shootingDirection = Direction.DOWN;
+
+                System.out.println(" I'm in column: " + position.getCol() + " and " + " I'm on row " + position.getRow());
                 break;
         }
 
+    }
 
+    public void shoot(){
+
+        weapon.shot(position, getShootingDirection());
     }
 
     public void setVelocity(int velocity) {
         this.velocity = velocity;
     }
+
+
+    public Position getPosition(){
+
+        return position;
+    }
+
+    public void setPosition(Position position){
+        this.position = position;
+    }
+
+    public Direction getShootingDirection(){
+
+        return shootingDirection;
+    }
+
+    public Picture getPicture(){
+        return picture;
+    }
+
 }

@@ -6,6 +6,7 @@ import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 
 public class TestingScenarioDummy {
+
     public static final int PADDING = 10;
     private static final int CELL_SIZE_IN_PIXELS = 20;
     private int cols;

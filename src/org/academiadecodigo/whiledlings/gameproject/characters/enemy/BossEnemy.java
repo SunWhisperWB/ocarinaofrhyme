@@ -1,11 +1,12 @@
 package org.academiadecodigo.whiledlings.gameproject.characters.enemy;
 
+import org.academiadecodigo.whiledlings.gameproject.characters.CharactersEnum;
+
+
 public class BossEnemy extends Enemy{
 
-    private String name;
-
-    public BossEnemy(String name){
-        this.name = name;
+    public BossEnemy(CharactersEnum charactersEnum){
+        super(CharactersEnum.PLAYER);
     }
 
 

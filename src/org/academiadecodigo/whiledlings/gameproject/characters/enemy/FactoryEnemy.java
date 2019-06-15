@@ -1,38 +1,34 @@
 package org.academiadecodigo.whiledlings.gameproject.characters.enemy;
 
+import org.academiadecodigo.whiledlings.gameproject.scenarios.ScenarioType;
+
 public class FactoryEnemy {
 
     private int countBossEnemy;
+    private RegularEnemy[] regularEnemy;
+    private BossEnemy bossEnemy;
+    private ScenarioType scenario;
 
+    public FactoryEnemy(ScenarioType scenario){
+        this.scenario = scenario;
+    }
+
+   /** Create Regular Enemy
     public RegularEnemy [] createRegularEnemy(int maxEnemy){
-
-        RegularEnemy[] enemy = null;
 
         for(int i = 0; i < maxEnemy; i++){
 
-            enemy[i] = new RegularEnemy();
+            regularEnemy[i] = new RegularEnemy(CharactersEnum.PLAYER);
         }
-
-        return enemy;
+        return regularEnemy;
     }
 
-    public BossEnemy createBossEnemy(){
+    //Create Mc's enemy once in choosed scenario
+   // public BossEnemy createBossEnemy(){
 
-        BossEnemy enemy = null;
+      //  return  new BossEnemy(scenario);
+    // }
 
-        switch (countBossEnemy){
-            case 0:
-                enemy = new BossEnemy("MC Mariana");
-                break;
-            case 1:
-                enemy = new BossEnemy("MC Seringas");
-                break;
-            case 2:
-                enemy = new BossEnemy("MC Faustino");
-                break;
-        }
-        countBossEnemy++;
-        return enemy;
-    }
+ **/
 
 }
